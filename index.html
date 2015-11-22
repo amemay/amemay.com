@@ -29,12 +29,14 @@ layout: compress
         <div class="container">
             <header class="header">
                 <h1>{{ site.title }}<span>{{ site.description }}</span></h1>
+                {% if site.links.show == true %}
                 <nav class="links">
-                    <a href="#"><i class="fa fa-twitter-square fa-3x"></i></a>
-                    <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
-                    <a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
-                    <a href="#"><i class="fa fa-tumblr-square fa-3x"></i></a>
+                    {% if site.links.twitter %}<a href="https://www.twitter.com/{{ site.links.twitter }}"><i class="fa fa-twitter-square fa-3x"></i></a>{% endif %}
+                    {% if site.links.instagram %}<a href="https://instagram.com/{{ site.links.instagram }}"><i class="fa fa-instagram fa-3x"></i></a>{% endif %}
+                    {% if site.links.facebook %}<a href="https://www.facebook.com/{{ site.links.facebook }}"><i class="fa fa-facebook-square fa-3x"></i></a>{% endif %}
+                    {% if site.links.tumblr %}<a href="https://{{ site.links.tumblr }}.tumblr.com"><i class="fa fa-tumblr-square fa-3x"></i></a>{% endif %}
                 </nav>
+                {% endif %}
             </header>
             <div class="content">
                 <!-- trianglify pattern container -->
